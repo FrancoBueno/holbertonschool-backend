@@ -29,7 +29,6 @@ class Server:
         [start, end] = index_range(page, page_size)
         return self.dataset()[start: end]
 
-
     def get_hyper(self, page: int, page_size: int) -> dict:
         """
         Retuns a dictionary
@@ -51,5 +50,3 @@ class Server:
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """Return a tuple """
     return ((page - 1) * page_size, page * page_size)
-
-
