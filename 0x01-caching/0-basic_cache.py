@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ asdaspdsapap"""
 from base_caching import BaseCaching
 
