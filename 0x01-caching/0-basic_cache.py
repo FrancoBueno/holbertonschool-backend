@@ -5,6 +5,9 @@ from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """ caching system sadsadas"""
+    def __init__(self):
+        super().__init__()
+
     def put(self, key, item):
         if item is None or key is None:
             pass
