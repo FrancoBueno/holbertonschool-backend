@@ -1,19 +1,24 @@
 #!/usr/bin/python3
-""" 2-main """
-LIFOCache = __import__('2-lifo_cache').LIFOCache
+""" Python caching systems """
+from base_caching import BaseCaching
 
-my_cache = LIFOCache()
-my_cache.put("A", "Hello")
-my_cache.put("B", "World")
-my_cache.put("C", "Holberton")
-my_cache.put("D", "School")
-my_cache.print_cache()
-my_cache.put("E", "Battery")
-my_cache.print_cache()
-my_cache.put("C", "Street")
-my_cache.print_cache()
-my_cache.put("F", "Mission")
-my_cache.print_cache()
-my_cache.put("G", "San Francisco")
-my_cache.print_cache()
 
+class LIFOCache(BaseCaching):
+    """ LIFO caching system """
+    def __init__(self):
+        """ Initialize class instance. """
+        super().__init__()
+
+    def put(self, key, item):
+        """ Add an item in the cache """
+        if key and item:
+            self.cache_data[key] = item
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            self.cache_data.pop(self.last_item)
+            print('DISCARD:', self.last_item)
+        if key:
+            self.last_item = key
+
+    def get(self, key):
+        """ Get an item by key """
+        return self.cache_data.get(key)
