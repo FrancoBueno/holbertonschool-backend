@@ -1,19 +1,17 @@
 #!/usr/bin/python3
-""" asdaspdsapap asdasdasdal"""
-BaseCaching = __import__('base_caching').BaseCaching
+""" caching systems """
+from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """ caching system sadsadas"""
-    def __init__(self):
-        super().__init__()
-
+    """ caching system """
     def put(self, key, item):
-        if item is None or key is None:
-            return
+        """ Add an item in the cache """
+        if key is None or item is None:
+            pass
         else:
             self.cache_data[key] = item
 
     def get(self, key):
-        """ get a key by item asdasdasdsa"""
+        """ Get an item by key """
         return self.cache_data.get(key)
