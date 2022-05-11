@@ -4,7 +4,7 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """ caching system """
+    """ caching system sadsadas"""
     def put(self, key, item):
         if item is None or key is None:
             pass
@@ -12,7 +12,7 @@ class BasicCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """ get a key by item """
+        """ get a key by item asdasdasdsa"""
         if key is None:
             pass
         else:
