@@ -10,7 +10,7 @@ class BasicCache(BaseCaching):
 
     def put(self, key, item):
         if item is None or key is None:
-            pass
+            return
         else:
             self.cache_data[key] = item
 
